@@ -67,7 +67,7 @@ module WorkSurfer
     protected
 
     def connection
-      @connection ||= Faraday::Connection.new(
+      @connection ||= Faraday.new(
         url_base,
         connection_options.merge(
           headers: evaluate_hash_values(default_headers)
@@ -77,14 +77,7 @@ module WorkSurfer
     end
 
     def evaluate_hash_values(hash)
-      Hash[
-        *hash.collect do |k, v|
-          [
-            k,
-            v.is_a?(Proc) ? instance_eval(&v) : v,
-          ]
-        end.flatten
-      ]
+      hash.transform_values { |v| v.is_a?(Proc) ? instance_eval(&v) : v }
     end
 
     class << self

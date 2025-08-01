@@ -32,7 +32,7 @@ A Faraday connection builder. Defaults to:
 ->(builder) {
   builder.adapter   Faraday.default_adapter
   builder.request   :json
-  builder.response  :parse_json
+  builder.response  :json
 }
 ```
 
@@ -41,7 +41,7 @@ A Faraday connection builder. Defaults to:
 **Optional**
 
 A `Hash` of options passed as the second parameter to
-`Faraday::Connection.new`.
+`Faraday.new`.
 
 #### default_headers
 
@@ -91,8 +91,8 @@ as described in the [API Reference Documentation](https://wwrm.workwave.com/api)
 
 ## Compatibility
 
-So far, this has only been verified to work on Ruby (MRI) 2.3.1. I have
-no plans to support any Ruby versions below 2.3.
+So far, this has only been verified to work on Ruby (MRI) 3.4. I have
+no plans to support any Ruby versions below 3.0.
 
 ## Status
 
