@@ -5,6 +5,12 @@ An experiemental unofficial Ruby client for the
 
 ## v0
 
+### v0.1.0 (2025-08-01)
+
+- Update dependencies to faraday ~> 1.0 and faraday_middleware ~> 1.0.
+- Require Ruby 3.0 or newer.
+- Modernize client implementation and documentation.
+
 ### v0.0.3 (2017-08-30)
 
 - Added Orders.add API.
